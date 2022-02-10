@@ -94,3 +94,31 @@ console.log(eightiesCompanys);
 
 const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
 console.log(lastedTenYears);
+
+// Practicing .map() with the arrays
+// create array of company names
+
+const companyNames = companies.map(function(company){
+    return company.name;
+});
+console.log(companyNames);
+
+const testMap = companies.map(function(company){
+    return `${company.name} [${company.start} - ${company.end}]`;
+})
+console.log(testMap);
+
+const testMap1 = companies.map(company => `${company.name} (${company.start} - ${company.end})`);
+console.log(testMap1);
+
+const agesSquare = ages.map(age => Math.sqrt(age));
+console.log(agesSquare);
+
+const ageTimesTwo = ages.map(age => age * 2);
+console.log(ageTimesTwo);
+
+const squareTimesTwo = ages
+.map(age => Math.sqrt(age))
+.map(age => age * 2);
+console.log(squareTimesTwo);
+
