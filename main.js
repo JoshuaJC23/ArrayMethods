@@ -138,8 +138,44 @@ const sortedCompanys = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 console.log(sortedCompanys);
 
 //sort ages lowest to highest
-const sortedAges = ages.sort((a, b) => a - b);
-console.log(sortedAges);
+// const sortedAges = ages.sort((a, b) => a - b);
+// console.log(sortedAges);
 
-const sort = ages.sort();
-console.log(sort);
+// const sort = ages.sort();
+// console.log(sort);
+
+// reduce method
+// add all the ages together
+
+let ageSum = 0;
+for(let i = 0; i < ages.length; i++){
+    ageSum += ages[i];
+};
+console.log(ageSum);
+
+const ageSums = ages.reduce(function(total, age){
+   return total + age;
+}, 0);
+console.log(ageSums);
+
+const ageSumss = ages.reduce((total, age) => total + age, 0);
+console.log(ageSumss);
+
+// Get total years for all compamies, range.
+
+const totalYears = companies.reduce(function(total, company){
+    return total + (company.end - company.start);
+}, 0);
+console.log(totalYears);
+
+const totalYearss = companies.reduce((total, company) => total + (company.end - company.start), 0);
+console.log(totalYearss);
+
+// combine methods
+
+const combined = ages
+    .map(age => age * 2)
+    .filter(age => age >= 40)
+    .sort((a, b) => a - b)
+    .reduce((total, age) => total + age, 0);
+console.log(combined);
