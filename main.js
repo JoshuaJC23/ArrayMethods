@@ -179,3 +179,19 @@ const combined = ages
     .sort((a, b) => a - b)
     .reduce((total, age) => total + age, 0);
 console.log(combined);
+
+// reverse method
+//Write a javascript function that reverse a number
+// example x = 32243 > 34223
+
+
+function reverse(str){
+    str += "";
+    // let reverse_str = str.split("");
+    // let reverseString = reverse_str.reverse();
+    // let reverseNum = reverseString.join("");
+    // return reverseNum;
+    return str.split('').reverse().join('');
+}
+
+console.log(reverse(32243));
