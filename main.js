@@ -28,5 +28,69 @@ companies.forEach(function(company){
     console.log(company.category);
 });
 
+console.log("__________________")
+// Use for loop to loop through ages array and get all who are 21 and over
+
+let canDrink = [];
+for(let i = 0; i < ages.length; i++){
+    if(ages[i] >= 21){
+        canDrink.push(ages[i]);
+    }
+}
+console.log(canDrink);
+
+console.log("________________")
 // Use .filter() to filter things out of the current array
 
+const canDrinkAlcohol = ages.filter(function(age){
+    if(age >= 21){
+        return true;
+    }
+})
+
+console.log(canDrinkAlcohol);
+console.log("__________________")
+
+// Make this more simple using ES6 arrow functions
+
+const canDrinkBeer = ages.filter(age => age >= 21);
+console.log(canDrinkBeer);
+
+console.log("__________________")
+
+// filter out the retail companies from the objects in the array
+
+const retailCompanies = companies.filter(function(company){
+    if(company.category === "Retail"){
+        return true;
+    }
+})
+console.log(retailCompanies);
+
+// const empty = [];
+// for( let i = 0; i < companies.length; i++){
+//     if(companies[i].category ===  "Retail"){
+//         empty.push(companies[i]);
+//     }
+// }
+// console.log(empty)
+
+const retailCompanys = companies.filter(company => company.category === "Retail");
+console.log(retailCompanys);
+
+// Get companies that started in the 80's
+
+const eightiesCompanies = companies.filter(function(company){
+    if(company.start > 1980 && company.start < 1990){
+        return true;
+    }
+});
+console.log(eightiesCompanies);
+
+const eightiesCompanys = companies.filter(company => (company.start >= 1980 && company.start < 1990));
+console.log(eightiesCompanys);
+
+// Get companies that lastes 10 years
+
+const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+console.log(lastedTenYears);
