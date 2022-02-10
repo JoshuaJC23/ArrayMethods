@@ -122,3 +122,24 @@ const squareTimesTwo = ages
 .map(age => age * 2);
 console.log(squareTimesTwo);
 
+// Use and practice the .sort() method.
+// sort out the companies by the start year.
+const sortedCompanies = companies.sort(function(company1, company2){
+    if(company1.start > company2.start){
+        return 1;
+    } else {
+        return -1;
+    }
+});
+
+console.log(sortedCompanies);
+
+const sortedCompanys = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+console.log(sortedCompanys);
+
+//sort ages lowest to highest
+const sortedAges = ages.sort((a, b) => a - b);
+console.log(sortedAges);
+
+const sort = ages.sort();
+console.log(sort);
